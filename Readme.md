@@ -21,3 +21,12 @@ Stack and Heap:
 
 Stack is a memory area where local variables are stored. It is a LIFO (Last In First Out)
 Heap is a memory area where objects are stored.
+
+String: strings in Java are immutable. This means that once a string object is created, its contents cannot be changed.
+
+Mutable string : can be change (String buffer and String builder)
+Immutable string : can't be change
+
+this and super method: 
+this() calls constructor of the same class.
+super() calls constructor of the parent class and this method stays there in every constructor by default. every class in java is a child class of Object class.
