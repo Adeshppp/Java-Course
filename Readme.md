@@ -16,4 +16,8 @@ String
 Array
 Object
 
+ 
+Stack and Heap:
 
+Stack is a memory area where local variables are stored. It is a LIFO (Last In First Out)
+Heap is a memory area where objects are stored.
