@@ -35,3 +35,11 @@ Multple inheritence is not supported in JAVA.
 Polymorphism: Many Behaviour
 1. Compile time polymorphism (early binding) : Overloading : same method name with different signature
 2. Run time polymorphism (late binding) : Overriding : parent and child class has same method
+
+
+final Keyword:
+1. final variable : can't be change
+2. final method : can't be override
+3. final class : can't be extend
+
+Every class in java extends Object class
