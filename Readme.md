@@ -43,8 +43,20 @@ final Keyword:
 3. final class : can't be extend
 
 Object class :
-Every class in java extends Object class. and Object class has a method called toString(), which returns some hex code by following some pattern like below
+
+Every class in java extends Object class. 
+
+toString():
+Object class has a method called toString(), which returns some hex code by following some pattern like below
 
 className@hexCodeOfClass
 
 so by providing a implementation to toString methiod in a class we can make it return some valuable information about class. and then if we try top print obj then there will be some valuable information about a class.
+
+
+equals():
+Object class has a method called equals(), which returns boolean value by comparing 2 objects.
+what if we want to check whether 2 objects has same values in it or not.
+
+we can implement equals method aby giving it a implementation.
+
