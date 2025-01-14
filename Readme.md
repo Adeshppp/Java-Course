@@ -29,4 +29,9 @@ Immutable string : can't be change
 
 this and super method: 
 this() calls constructor of the same class.
-super() calls constructor of the parent class and this method stays there in every constructor by default. every class in java is a child class of Object class.
+super() calls constructor of the parent class and this method stays there in every constructor by default. every class in java is a child class of Object class. 
+
+Multple inheritence is not supported in JAVA.
+Polymorphism: Many Behaviour
+1. Compile time polymorphism (early binding) : Overloading : same method name with different signature
+2. Run time polymorphism (late binding) : Overriding : parent and child class has same method
