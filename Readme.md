@@ -42,4 +42,9 @@ final Keyword:
 2. final method : can't be override
 3. final class : can't be extend
 
-Every class in java extends Object class
+Object class :
+Every class in java extends Object class. and Object class has a method called toString(), which returns some hex code by following some pattern like below
+
+className@hexCodeOfClass
+
+so by providing a implementation to toString methiod in a class we can make it return some valuable information about class. and then if we try top print obj then there will be some valuable information about a class.
