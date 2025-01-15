@@ -64,4 +64,7 @@ it's recommended to not provide implementation to toString(), hashCode() and equ
 
 
 
+Abstract keyword:
+we can not create a object of abstract class.
+child class should provide implementation to abstract methods.
 
