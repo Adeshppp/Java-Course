@@ -61,3 +61,7 @@ what if we want to check whether 2 objects has same values in it or not.
 we can implement equals method aby giving it a implementation.
 
 it's recommended to not provide implementation to toString(), hashCode() and equals() methods manually, we can use IDE to implement, which procvides multiple checks.
+
+
+
+
