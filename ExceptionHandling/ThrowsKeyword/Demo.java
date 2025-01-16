@@ -19,6 +19,7 @@ public class Demo {
             a.print();
         } catch (ClassNotFoundException e) {
             System.out.println("Class not found: " + e);
+            e.printStackTrace();
         }
 
     }
