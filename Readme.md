@@ -104,3 +104,14 @@ class level annotation:
 
 method level annotation:
 @FunctionalInterface
+
+
+Types of Interfaces in java:
+
+1. Normal Interface
+2. Marker Interface (blank interfcae) : may be for serialisation purpose
+3. Functional Interface : SAM (Single Abstract Method)
+
+Functional Interface (Single Abstract Method)
+
+Lambda expression only works with functional interfaces
