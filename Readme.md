@@ -95,3 +95,12 @@ Enumerator:
 
 Enumaerator is used to declare constants. which is known as a object of enum class.
 thats why if we declare any value in () brackets we need to declare a private constructir, we can also declare normal and parameterized constructor in enum.
+
+Annotations:
+Annotations are used to provide additional information about a class, method, variable etc. to the compiler, so we can get to know if there is any logic bugs in a code.
+
+class level annotation:
+@Deprecated
+
+method level annotation:
+@FunctionalInterface
