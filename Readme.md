@@ -115,3 +115,12 @@ Types of Interfaces in java:
 Functional Interface (Single Abstract Method)
 
 Lambda expression only works with functional interfaces
+
+
+## Errors:
+1. Compile time Errors
+2. Run time Errors (Exceptions)
+3. Logical Errors
+
+
+Runtime errors/ exceptions can be handled by using try catch block.
