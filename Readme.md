@@ -75,5 +75,6 @@ Inner class:
 In Java only inner class can be static.
 
 Anonymous class:
-When we know that there is class which is only be used once then in that situation we can use anonymous class.
+When we know that there is concreate or abstract class which is only be used once then in that situation we can use anonymous class.
 
+ 
