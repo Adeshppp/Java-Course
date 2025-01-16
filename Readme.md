@@ -77,4 +77,14 @@ In Java only inner class can be static.
 Anonymous class:
 When we know that there is concreate or abstract class which is only be used once then in that situation we can use anonymous class.
 
- 
+ Interface:
+ each methodd in the interface is abstract and public. we dont need to explicitly declare it as abstract and public.
+ each variable in interface is static and final, so we should assign a value there itself.
+ at the time of accessing or calling those varianbles we can use interface name as a reference like A.age;
+ multiple imnheritence is possible by using interfaces.
+we can not instantiate the interface so there is no space for a interface in a heap memory thats why we need to call any declared variable in it by using interface name reference.
+
+
+calss -> class : extends
+interface -> class : implements
+interface -> interface : extends

@@ -4,6 +4,8 @@
 // }
 
 interface Computer {
+    int memorySize = 1024;
+
     void code();
 }
 
