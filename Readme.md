@@ -88,3 +88,10 @@ we can not instantiate the interface so there is no space for a interface in a h
 calss -> class : extends
 interface -> class : implements
 interface -> interface : extends
+
+
+
+Enumerator:
+
+Enumaerator is used to declare constants. which is known as a object of enum class.
+thats why if we declare any value in () brackets we need to declare a private constructir, we can also declare normal and parameterized constructor in enum.
