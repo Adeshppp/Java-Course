@@ -124,3 +124,9 @@ Lambda expression only works with functional interfaces
 
 
 Runtime errors/ exceptions can be handled by using try catch block.
+
+
+
+### Input from user:
+1. BufferedReader
+2. Scanner
