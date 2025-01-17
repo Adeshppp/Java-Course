@@ -133,3 +133,7 @@ Runtime errors/ exceptions can be handled by using try catch block.
 
 ### Finally block:
 finally block is used to perform some operation which is independent of try and catch block. it is used to close the resources.
+
+## Threads:
+1. Runnable interface
+2. Thread class
