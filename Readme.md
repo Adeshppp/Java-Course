@@ -135,5 +135,19 @@ Runtime errors/ exceptions can be handled by using try catch block.
 finally block is used to perform some operation which is independent of try and catch block. it is used to close the resources.
 
 ## Threads:
-1. Runnable interface
-2. Thread class
+Thread class implements Runnable interface which has run() method.
+so whenever we want to implement a thread we can do it by 2 ways
+
+1. Thread class
+2. Runnable interface
+
+### Thread class:
+Thread class is used to create a thread. it has 2 methods
+1. start() : start the thread
+2. run() : we need to priovide implementation to the run method.
+
+What if we want to extend another class and thread class at the same time, as in multiple inheritence is not allowed in java?
+In that case we can use Runnable interface.
+
+
+Runnable interface is functional interface so we can achieve threading by using lambda expression as well.
