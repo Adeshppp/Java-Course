@@ -167,6 +167,5 @@ Thread states:
 5. Dead
 
 
-# Collection
 
  
