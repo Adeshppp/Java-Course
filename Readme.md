@@ -151,3 +151,10 @@ In that case we can use Runnable interface.
 
 
 Runnable interface is functional interface so we can achieve threading by using lambda expression as well.
+
+## Race Condition:
+
+Race condition occures when 2 different threads try to change the variable at the same time and results in unexpected behaviour.
+to avoid that we can declare the function as synchronized, which makes that particular function to be synchronized means allows only one thread to execute at a time.
+
+also we can use join method on threads if we want to main thread to wait until threads finish executing.
