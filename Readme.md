@@ -184,3 +184,24 @@ in java 10, instead of using type while declaring a variable we can use 'var' ke
 var only applicable for local variables means variables inside methods.
 it is mandetory to assign a value to var variable.
 Var keyword is not allowed at instance level. means inside a class and outside of method.
+
+## Sealed classes
+Sealed classes/interfaces are used to restrict the subclassing/subinterfacing of a class. 
+
+### Final classes: any class can not inherite final class
+### Abstract classes : any class can inherite abstract class
+
+### What if we want to allow only few classes to inherite a base class?
+In that case we can use sealed classes.
+Sealed classes are used to restrict the subclassing/subinterfacing of a class/interface.
+child class who is inheriting a seales class should have one of the following keyword:
+1. sealed
+2. non-sealed
+3. final
+
+sealed class should have sealed keyword and class names to which it wants to give access to inherite that class followed by permits keyword.
+sealed child class should have a subclass. 
+non-sealed class may or may not have normal child class.
+final class can not have child class.
+
+likewise for interfaces except that interfaces can not be declared as final.
