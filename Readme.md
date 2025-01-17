@@ -166,6 +166,14 @@ Thread states:
 4. Waiting
 5. Dead
 
+### forEaach method of List interface
+for each method is used to iterate over the list and it belongs to Iterable interface and takes Consumer interface type argument. which is Functional interface and has accept() method as an abstract method.
 
+Stream API:
 
- 
+Stream can be only use once.
+stream methods:
+1. filter(n->n%2==0) : Predicate<T> FI : test(T)
+2. map(n->n/2) : Function<T,R> FI : apply(T)
+3. reduce(valueToStartWith, Operation)  : reduce(0,(c,e)->c+e);
+4. sorted();
