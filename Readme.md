@@ -205,3 +205,14 @@ non-sealed class may or may not have normal child class.
 final class can not have child class.
 
 likewise for interfaces except that interfaces can not be declared as final.
+
+
+## Record classes
+we can use record class to replace the class which is used for only to transfer or store a data.
+Record classes are used to create classes that are immutable by default.
+record classes are there to shortened the class implementation as in it provides all utility methods by default as follows:
+1. toString()
+2. equals()
+3. hashCode()
+4. getter and setter
+5. Constructor
