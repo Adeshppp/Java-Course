@@ -158,3 +158,15 @@ Race condition occures when 2 different threads try to change the variable at th
 to avoid that we can declare the function as synchronized, which makes that particular function to be synchronized means allows only one thread to execute at a time.
 
 also we can use join method on threads if we want to main thread to wait until threads finish executing.
+
+Thread states:
+1. New 
+2. Runnable
+3. Running
+4. Waiting
+5. Dead
+
+
+# Collection
+
+ 
