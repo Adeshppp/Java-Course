@@ -130,3 +130,6 @@ Runtime errors/ exceptions can be handled by using try catch block.
 ### Input from user:
 1. BufferedReader
 2. Scanner
+
+### Finally block:
+finally block is used to perform some operation which is independent of try and catch block. it is used to close the resources.
