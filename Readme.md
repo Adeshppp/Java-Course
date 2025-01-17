@@ -177,3 +177,10 @@ stream methods:
 2. map(n->n/2) : Function<T,R> FI : apply(T)
 3. reduce(valueToStartWith, Operation)  : reduce(0,(c,e)->c+e);
 4. sorted();
+
+
+## LVTI : Local Variable Type Inference
+in java 10, instead of using type while declaring a variable we can use 'var' keyword.
+var only applicable for local variables means variables inside methods.
+it is mandetory to assign a value to var variable.
+Var keyword is not allowed at instance level. means inside a class and outside of method.
