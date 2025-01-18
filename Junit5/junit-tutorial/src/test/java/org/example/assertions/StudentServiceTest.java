@@ -31,7 +31,7 @@ class StudentServiceTest {
 
 
     @Test
-    void getStudentById() {
+    void getStudentByIdByUsingAssertNull() {
         StudentService studentService = new StudentService();
         Student student = new Student(26,"Adesh");
         studentService.addStudent(student);
@@ -44,6 +44,22 @@ class StudentServiceTest {
 //        assertNotNull(student1);
 //        assertNotNull(student1,"Student is not present");
         assertNotNull(student1,()->"Student is not present");
+
+    }
+
+    @Test
+    void getStudentByIdByUsingAssertEquals(){
+        StudentService studentService = new StudentService();
+        Student student = new Student(26,"Adesh");
+        Student student3 = new Student(27,"Nilesh");
+        studentService.addStudent(student);
+        Student student1 = studentService.getStudentById(26);
+        System.out.print(student1);
+        assertEquals(student,student1);
+//        assertEquals(student,student3,"Both students are different");
+//        assertEquals(student.getAge(),student3.getAge(),"Both students have age difference");
+        assertEquals(student.getAge(),student3.getAge(),()->"Both students have age difference");
+
 
     }
 }
