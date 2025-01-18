@@ -13,6 +13,8 @@ Test class should be public or default.
 
 
 JUnit5 methods:
-1. assertEquals(expectedValue, actualValue);
-2. assertTrue(boolean condition)
-3. assertFalse(boolean condition)
+1. assertEquals(expectedValue, actualValue); : Success when both values are same
+2. assertTrue(boolean condition) : Success when condition returns True
+3. assertFalse(boolean condition) : Success when condition returns False
+4. assertNull(Object actualObject) : Success when object is null
+5. assertNotNull(Object actualObject) : Success when object is not null
