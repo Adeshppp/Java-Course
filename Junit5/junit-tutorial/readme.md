@@ -25,4 +25,4 @@ JUnit5 methods:
 
 JUnit5 Annotations:
 1. @DisplayName("new Name of a method or class") : change the name of a function and class by using this annotarion
-2. 
+2. @Disabled : disables the test fucntion or a class

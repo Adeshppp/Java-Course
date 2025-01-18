@@ -1,6 +1,7 @@
 package org.example.annotations;
 
 import org.example.Calculator;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -28,6 +29,7 @@ class CalculatorTest {
     void multiply() {
     }
 
+    @Disabled
     @DisplayName("Divide operation")
     @Test
     void divide() {
