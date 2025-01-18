@@ -67,4 +67,18 @@ class StudentServiceTest {
 
 
     }
+
+    @Test
+    void getStudentByNameByUsingAssertThrows() {
+        StudentService studentService = new StudentService();
+        Student student = new Student(26,"Adesh");
+        Student student3 = new Student(27,"Nilesh");
+        studentService.addStudent(student);
+        Student student1 = studentService.getStudentById(26);
+//        assertThrows(StudentNotFoundException.class,()->studentService.getStudentByName("Adesh"));
+//        assertThrows(StudentNotFoundException.class,()->studentService.getStudentByName("Adesh"),"Student is absent");
+//        assertThrows(StudentNotFoundException.class,()->studentService.getStudentByName("Adesh"),()->"Student is absent");
+        assertThrows(RuntimeException.class,()->studentService.getStudentByName("Nilesh"),()->"Student is absent");
+        assertDoesNotThrow(()->studentService.getStudentByName("Nilesh"),"Student is absent");
+    }
 }

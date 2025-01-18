@@ -19,4 +19,5 @@ JUnit5 methods:
 4. assertFalse(boolean condition) : Success when condition returns False
 5. assertNull(Object actualObject) : Success when object is null
 6. assertNotNull(Object actualObject) : Success when object is not null
-7. 
+7. assertThrows() : Success when code throws an exception
+8. assertDoesNotThrows() : 
