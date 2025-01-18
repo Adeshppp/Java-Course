@@ -58,7 +58,12 @@ class StudentServiceTest {
         assertEquals(student,student1);
 //        assertEquals(student,student3,"Both students are different");
 //        assertEquals(student.getAge(),student3.getAge(),"Both students have age difference");
-        assertEquals(student.getAge(),student3.getAge(),()->"Both students have age difference");
+        assertEquals(student.getAge(),student1.getAge(),()->"Both students have age difference");
+
+        assertNotEquals(student,student3);
+//        assertNotEquals(student,student3,"Both students are different");
+//        assertNotEquals(student.getAge(),student3.getAge(),"Both students have age difference");
+        assertNotEquals(student.getAge(),student3.getAge(),()->"Both students have age difference");
 
 
     }
