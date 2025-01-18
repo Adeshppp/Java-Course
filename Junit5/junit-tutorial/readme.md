@@ -21,3 +21,8 @@ JUnit5 methods:
 6. assertNotNull(Object actualObject) : Success when object is not null
 7. assertThrows() : Success when code throws an exception
 8. assertDoesNotThrows() : 
+
+
+JUnit5 Annotations:
+1. @DisplayName("new Name of a method or class") : change the name of a function and class by using this annotarion
+2. 
