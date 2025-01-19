@@ -20,7 +20,9 @@ Test class should be public or default.
 5. assertNull(Object actualObject) : Success when object is null
 6. assertNotNull(Object actualObject) : Success when object is not null
 7. assertThrows() : Success when code throws an exception
-8. assertDoesNotThrows() : 
+8. assertDoesNotThrows()
+9. assertArrayEquals(array1, array2)
+10. assertTimeout(Duration.ofMillis(10), supplier) : checks the performance of a unit
 
 
 ## JUnit5 Annotations:
