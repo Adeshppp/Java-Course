@@ -17,12 +17,12 @@ public class ShapeTest {
     @Test
     void computeCircleArea() {
         assertEquals(78.5, shape.computeCircleArea(5),"Area of circle calculation is wrong.");
-        assertNotEquals(78.5, shape.computeCircleArea(5),"Area of circle calculation is not wrong.");
+        assertNotEquals(78.5, shape.computeCircleArea(4),"Area of circle calculation is not wrong.");
     }
     @Test
     void computeCircleAreaByUsingSupplier() {
         assertEquals(78.5, shape.computeCircleArea(5),()->"Area of circle calculation is wrong.");
-        assertNotEquals(78.5, shape.computeCircleArea(5),()->"Area of circle calculation is not wrong.");
+        assertNotEquals(78.5, shape.computeCircleArea(4),()->"Area of circle calculation is not wrong.");
 
     }
 }
