@@ -9,11 +9,22 @@ public class Demo {
         System.out.println();
 
 //        nums = bubbleSort(nums);
-        nums = selectionSort(nums);
+//        nums = selectionSort(nums);
+        nums = insertionSort(nums);
 
         System.out.println();
         System.out.println("After Sorting");
         for (int num : nums) System.out.print(num + " ");
+    }
+
+    public  static int[] insertionSort(int[] nums) {
+        for(int i=1;i<nums.length;i++){
+            int key = nums[i];
+            int j = i-1;
+            while(j>=0 && nums[j]> key) nums[j+1] = nums[j--];
+            nums[j+1] = key;
+        }
+        return nums;
     }
 
     public static int[] selectionSort(int[] nums) {
