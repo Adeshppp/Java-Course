@@ -7,9 +7,9 @@ concept: First In First Out
 when we have a concept and associates operations along with data then it is called as Abstract Data Type.
 
 
-## Array
+## Algorithms
 
-Searching an element in sorted array
+Task : Searching an element in sorted array
 
 1. Linear search : look for an element by traversing over all elements from start to end
 2. Binary search : Divide and conquer (for each step we are removing half array from consideration)
