@@ -56,3 +56,14 @@ to understand time complexity we use Big O Notation
 
 ###  Best case:
 1. Insertion operation
+
+# Stack : Abstract Data Type
+
+LIFO (Last In First Out)
+Features --> Provided Functions
+
+add --> push()
+delete --> pop()
+find --> peak()
+
+example: book stack
