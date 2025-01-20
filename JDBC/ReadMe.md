@@ -22,3 +22,10 @@ We have 4 drivers to do that:
 5. Execute the Query.
 6. Process Result.
 7. Close connection.
+
+
+Types of languages in SQL:
+1. DDL (Data Definition Language)
+2. DML (Data Manipulation Language)
+3. DCL (Data Control Language)
+4. TCL (Transaction Control Language)

@@ -5,29 +5,50 @@ import java.sql.*;
 public class Demo {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         String url = "jdbc:mysql://localhost:3306/JDBC_learning";
-        String user = "root";
+        String userName = "root";
         String pass = "password";
-//        String query = "SELECT * FROM student where sid = 1";
+        Class.forName("com.mysql.cj.jdbc.Driver");// load the class so that all static methods can get executed
+        Connection connection = DriverManager.getConnection(url, userName, pass);
+
+        //Select query
         String query = "SELECT * FROM student";
-        Statement st = null;
-        Connection con = null;
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver"); // just load the class
-            con = DriverManager.getConnection(url, user, pass);
-            st = con.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            while(rs.next()){
-                System.out.println("Id of "+rs.getString("sname")+" is "+rs.getInt("sid")+" and email id is "+rs.getString("semail"));
-            }
-
-        }catch(Exception e){
-            System.out.println("Exception "+ e);
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        while (resultSet.next()) {
+            System.out.println(resultSet.getInt("sid") + " : " + resultSet.getString("sname") + " : " + resultSet.getString("semail"));
         }
-        finally{
-        st.close();
-        con.close();
 
-        }
+
+//        Insert Query
+//        query = "INSERT INTO student (sid, sname, semail) VALUES (7,'abhi','abhi@gmail.com');";
+//        int count = statement.executeUpdate(query);
+//        System.out.println(count + " row/s affected.");
+
+        // can also pass parameters dynamically
+//        int sid = 8;
+//        String sname = "Tanu";
+//        String semail = "tanu@gmail.com";
+//        query = "INSERT INTO student values (" + sid + ", '" + sname + "', '" + semail + "');";
+//        int count = statement.executeUpdate(query);
+//        System.out.println(count + " row/s affected.");
+        statement.close();
+
+        // as we are passing parameters, in order to make it easy, we can use PreparedStatement
+        int sid = 9;
+        String sname = "Vedu";
+        String semail = "vedu@gmail.com";
+        query = "INSERT INTO student values (?,?,?);";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, sid);
+        preparedStatement.setString(2,sname);
+        preparedStatement.setString(3,semail);
+
+        int count = preparedStatement.executeUpdate();
+        System.out.println(count + " row/s affected.");
+
+        preparedStatement.close();
+        connection.close();
+
 
     }
 }
