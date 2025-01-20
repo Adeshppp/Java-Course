@@ -60,10 +60,42 @@ to understand time complexity we use Big O Notation
 # Stack : Abstract Data Type
 
 LIFO (Last In First Out)
+
 Features --> Provided Functions
 
-add --> push()
+add --> push(data)
 delete --> pop()
 find --> peak()
 
 example: book stack
+
+
+# Queue
+
+FIFO (FIrst In First Out)
+
+insert --> enqueue(data)
+remove --> dequeue()
+
+
+# Tree : Abstract Data Type
+
+Tree has below elments associated with it:
+1. Nodes
+   1. Leaf Nodes : Nodes with no child nodes (can have multiple leaf nodes)
+   2. Root Node : Root of a tree (where traversal starts)
+2. Edges
+
+### Binary Tree : Each node can have maximum 2 child nodes
+1. Strict Binary Tree : Each node should have 2 or no child nodes.
+2. Full Binary Tree : All leaf nodes should be on same level.
+3. Complete Binary Tree : All leaf nodes should be on l level or l-1 level
+
+Concepts :
+1. Height : steps from current node to farthest leaf node
+2. Depth : steps from root node to current node
+
+### Tree Traversal 
+1. Inorder Traversal : Left -> Root -> Right : Gives sorted values
+2. Preorder Traversal : Root -> Left -> Right
+3. Postorder Traversal : Left -> Right -> Root
