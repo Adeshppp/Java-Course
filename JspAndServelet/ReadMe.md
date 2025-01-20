@@ -51,3 +51,33 @@ this can be implemented by using below syntax in a servlet.
 When client make a request to s1 servlet and if this website wants to jump on another website's (third party : payment gateway) servlet s2, at that time s1 responds client saying you need to redirect to the s2.
 in this case, client knows which servlet is responding.
 > res.sendRedirect("sq");
+
+
+## Session Management
+above approach of calling another servlet from one servlet is good when we have only one servlet to servlet call.
+when there are multiple servlet call like chain calling then at that time managing data is difficult. to tackle that we have session management. we can send data through session.
+so req object provided by tomcat server takes care of that by using session.
+as we know in chain servlet calling, it passes same req and res object throughout the lifecycle amd req object has session functionlity which we can use throughout.
+
+> HttpSession session = req.getSession();
+
+We can set and get values from session :
+> session.setAttribute("key", value);
+> session.getAttribute("key");
+> session.removeAttribute("key");
+
+Normally we use session for login purpose.
+
+for normal data storage throughout the request lifecycle, we can use cookies.
+ 
+## Cookies
+Again likewise tomcat provides cookies functionality, when client receives a request from a servlet it provides a cookies in a response and client again send back the cookies to another servlet in chain calling.
+
+
+Add cookies to response
+> Cookie cookie = new Cookie("key", "value");
+> res.addCookie(cookie);
+
+Access cookies from a request in another servlet
+> Cookie[] cookies = req.getCookies();
+> cookie.getValue();

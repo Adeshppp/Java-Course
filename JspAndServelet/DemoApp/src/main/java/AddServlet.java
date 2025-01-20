@@ -2,9 +2,11 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class AddServlet extends HttpServlet{
 	
@@ -23,16 +25,27 @@ public class AddServlet extends HttpServlet{
 		
 //		req.setAttribute("result", result);
 		
-// request dispatcher
+// 		request dispatcher to forward the request to square servlet
 //		RequestDispatcher rd = req.getRequestDispatcher("sq");
 //		rd.forward(req, res);
 	
 		
 		
-//		req.setParameter("result",result);
-//send redirect
-		res.sendRedirect("sq?result="+result); // URL Rewriting
-		 
+//		send redirect to forward a request to square servlet
+//		res.sendRedirect("sq?result="+result); // URL Rewritings
+		
+		
+//		Session management
+//		HttpSession session = req.getSession();
+//		session.setAttribute("sum",result);
+		
+		// cookies
+		Cookie cookie = new Cookie("sum", result+"");
+		res.addCookie(cookie);
+		
+		
+		res.sendRedirect("sq");
+		
 		
 	}	
 }
