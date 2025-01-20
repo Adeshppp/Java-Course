@@ -16,12 +16,12 @@ public class AddServlet extends HttpServlet{
 
 		int j = Integer.parseInt(req.getParameter("num2"));
 		int result = (i+j);
-//		result *=  result;
-//		System.out.println("Result is : "+result);
-//			
-//		
-//		res.getWriter().println("Result is : "+result);
+
+		System.out.println("Result is : "+result);
 		
+//		can pass the result of addition to the square servlet by using request which we are sending along with a call.
+		
+		req.setAttribute("result", result);
 		
 		// request dispatcher
 		RequestDispatcher rd = req.getRequestDispatcher("sq");
