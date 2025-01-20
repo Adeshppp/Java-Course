@@ -29,3 +29,7 @@ Types of languages in SQL:
 2. DML (Data Manipulation Language)
 3. DCL (Data Control Language)
 4. TCL (Transaction Control Language)
+
+
+## JDBC Design Patterns
+1. DAO : Data Access Object
