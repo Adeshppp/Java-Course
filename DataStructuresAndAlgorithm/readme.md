@@ -2,11 +2,11 @@
 
 When we have a type where we can perform some operations we call them Abstract.
 example of ADT is queue data structure:
-concept: First In First Out
+> concept: First In First Out
 
-when we have a concept and associates operations along with data then it is called as Abstract Data Type.
+when we have a concept and associate operations along with data then it is called as Abstract Data Type.
 
-# Array
+## Array
 
 ###  Best case:
 1. Searching operation
@@ -22,8 +22,8 @@ In both of these approaches, how to understand which one is efficient?\
 Time complexity
 
 ## Time complexity
-Time Complexity is a measure of how the running time of an algorith increases with the size of the input data.
-to understand time complexity we use Big O Notation
+Time Complexity is a measure of how the running time of an algorithm increases with the size of the input data.
+to understand time complexity we use Big O Notation.
 
 ### Big O Notations
 1. O(1) : Constant Time
@@ -57,7 +57,7 @@ to understand time complexity we use Big O Notation
 ###  Best case:
 1. Insertion operation
 
-# Stack : Abstract Data Type
+## Stack : Abstract Data Type
 
 LIFO (Last In First Out)
 
@@ -70,7 +70,7 @@ find --> peak()
 example: book stack
 
 
-# Queue
+## Queue
 
 FIFO (FIrst In First Out)
 
@@ -78,7 +78,7 @@ insert --> enqueue(data)
 remove --> dequeue()
 
 
-# Tree : Abstract Data Type
+## Tree : Abstract Data Type
 
 Tree has below elments associated with it:
 1. Nodes
@@ -86,7 +86,7 @@ Tree has below elments associated with it:
    2. Root Node : Root of a tree (where traversal starts)
 2. Edges
 
-### Binary Tree : Each node can have maximum 2 child nodes
+### Binary Tree :
 1. Strict Binary Tree : Each node should have 2 or no child nodes.
 2. Full Binary Tree : All leaf nodes should be on same level.
 3. Complete Binary Tree : All leaf nodes should be on l level or l-1 level
