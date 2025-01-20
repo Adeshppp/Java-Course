@@ -17,7 +17,7 @@ We have 4 drivers to do that:
 3. Establish the connection : Instantiate Connection interface
 4. Create the statement.
    1. Statement : Executes normal query
-   2. Prepared Statement : Executes predefined query with differen values
+   2. Prepared Statement : Executes predefined query with different values
    3. Callable Statement : Executes Procedural language
 5. Execute the Query.
 6. Process Result.
