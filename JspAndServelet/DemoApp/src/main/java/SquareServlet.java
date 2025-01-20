@@ -6,11 +6,12 @@ import javax.servlet.http.HttpServletResponse;
 
 public class SquareServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-//		int i = Integer.parseInt(req.getParameter("sum"));
-//		res.getWriter().println(i*i);
-		int k = (int) req.getAttribute("result");
-//		int k = Integer.parseInt(req.getParameter("result"));
 
-		res.getWriter().print("square is "+(k*k));
+//		int k = (int) req.getAttribute("result");
+//
+//		res.getWriter().print("square is "+(k*k));
+		int k = Integer.parseInt(req.getParameter("result"));
+		System.out.println("SQ called");
+		res.getWriter().print("result is "+(k*k));
 	}
 }
