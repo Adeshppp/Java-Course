@@ -7,17 +7,19 @@ public class Demo {
         String url = "jdbc:mysql://localhost:3306/JDBC_learning";
         String user = "root";
         String pass = "password";
-        String query = "SELECT * FROM student where sid = 1";
+//        String query = "SELECT * FROM student where sid = 1";
+        String query = "SELECT * FROM student";
         Statement st = null;
         Connection con = null;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver"); // just load the class
             con = DriverManager.getConnection(url, user, pass);
             st = con.createStatement();
-            ResultSet resultSet = st.executeQuery(query);
-            resultSet.next();
-            String name = resultSet.getString("sname");
-            System.out.println("Name is "+name);
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next()){
+                System.out.println("Id of "+rs.getString("sname")+" is "+rs.getInt("sid")+" and email id is "+rs.getString("semail"));
+            }
+
         }catch(Exception e){
             System.out.println("Exception "+ e);
         }
