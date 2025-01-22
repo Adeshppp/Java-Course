@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Laptop {
@@ -16,12 +17,15 @@ public class Laptop {
 	@ManyToMany
 	private List<Student> student = new ArrayList<>();
 	
+//	@ManyToOne
+//	private Student student;
+//	
+//	@OneToOne
+//	private Student student;
+	
 	
 	public int getLid() {
 		return lid;
-	}
-	public void setLid(int lid) {
-		this.lid = lid;
 	}
 	public List<Student> getStudent() {
 		return student;
@@ -29,6 +33,11 @@ public class Laptop {
 	public void setStudent(List<Student> student) {
 		this.student = student;
 	}
+	public void setLid(int lid) {
+		this.lid = lid;
+	}
+
+
 	public String getLname() {
 		return lname;
 	}

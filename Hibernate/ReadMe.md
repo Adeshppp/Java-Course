@@ -95,8 +95,11 @@ Operations
 
 ## Hibernate Mapping Relations
 
-1. One to One : @OneToOne
-2. One to Many : @OneToMany
-3. Many to One : @ManyToOne
-4. Many to Many : @ManyToMany
+1. One to One : @OneToOne : if we use this annotation above a variable in class then that class table will have extra column with primary key of another class to which we are trying to join it with
+2. One to Many : @OneToMany : if we use this annotation above a variable in class then it will simply create another table for mapping
+3. Many to One : @ManyToOne : if we use this annotation above a variable in class then it will simply add a column of primary key of another table for mapping
+4. Many to Many : @ManyToMany : many to many relationship in this, we should use mappedBy syntax in order to create just one mapping table.
+
+@OneTeMany(mappedBy="student") : will not create a table and will depend on another table for mapping 
+
 

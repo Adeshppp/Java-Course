@@ -26,8 +26,8 @@ public class App
         student.setMarks(99);
         student.getLaptop().add(laptop);
         
-        
         laptop.getStudent().add(student);
+        	
 
         
         
