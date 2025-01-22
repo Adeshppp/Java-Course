@@ -81,3 +81,7 @@ Add cookies to response
 Access cookies from a request in another servlet
 > Cookie[] cookies = req.getCookies();
 > cookie.getValue();
+
+
+continue from 1:02:00:00
+https://www.youtube.com/watch?v=4XTsAAHW_Tc
