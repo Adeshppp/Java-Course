@@ -19,15 +19,17 @@ jshell does not need to have all supporting functionality to run particular line
  
 ## Stack and Heap:
 
-Stack is a memory area where local variables are stored. It is a LIFO (Last In First Out)
-Heap is a memory area where objects are stored.
+* Stack is a memory area where local variables are stored. It is a LIFO (Last In First Out)\
+* Heap is a memory area where objects are stored.
 
 ## String: 
 
-Strings in Java are immutable. This means that once a string object is created, its contents cannot be changed.
+Strings in Java are immutable. This means that once a string object is created, its content cannot be changed.
 
 * Mutable string : can be change (String buffer and String builder)
-* Immutable string : can't be change
+  * StringBuffer : thread safe
+  * StringBuilder : not thread safe
+* Immutable string : can't be change 
 
 ## this() and super() method: 
 * this() : calls constructor of the same class.

@@ -62,8 +62,8 @@ as we know in chain servlet calling, it passes same req and res object throughou
 > HttpSession session = req.getSession();
 
 We can set and get values from session :
-> session.setAttribute("key", value);
-> session.getAttribute("key");
+> session.setAttribute("key", value);\
+> session.getAttribute("key");\
 > session.removeAttribute("key");
 
 Normally we use session for login purpose.
@@ -75,13 +75,13 @@ Again likewise tomcat provides cookies functionality, when client receives a req
 
 
 Add cookies to response
-> Cookie cookie = new Cookie("key", "value");
+> Cookie cookie = new Cookie("key", "value");\
 > res.addCookie(cookie);
 
 Access cookies from a request in another servlet
-> Cookie[] cookies = req.getCookies();
+> Cookie[] cookies = req.getCookies();\
 > cookie.getValue();
 
 
-continue from 1:02:00:00
+continue from 1:02:00:00\
 https://www.youtube.com/watch?v=4XTsAAHW_Tc
