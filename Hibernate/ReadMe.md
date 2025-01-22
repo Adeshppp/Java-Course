@@ -78,6 +78,10 @@ Code example:
     }
 
 
+Operations
+1. Saving records to the database : session.save(student);
+2. Fetching record from database : session.get(Student.class, PRIMARY_KEY_OF_RECORD);
+
 ## Javax Persistence Annotations
 1. @Id : Declares a variable as a primary key
 2. @Entity : Enables an object of a class to store in database
@@ -85,5 +89,6 @@ Code example:
 3. @Column(name="column_name) : Changes the name of a column/variable
 4. @Table(name="table_name)
 5. @Transient : if we declare any variable with @Transient then it won't take that variable as a column in DB.
-6. 
+
+
 
