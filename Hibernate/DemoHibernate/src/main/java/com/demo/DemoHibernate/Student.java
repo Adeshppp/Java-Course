@@ -20,6 +20,11 @@ public class Student {
 	@Transient
 	private int age;
 	
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", email=" + email + "]";
+	}
+	
 	public int getId() {
 		return id;
 	}
