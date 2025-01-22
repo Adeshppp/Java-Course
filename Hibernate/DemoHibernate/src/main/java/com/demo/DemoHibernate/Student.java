@@ -1,15 +1,23 @@
 package com.demo.DemoHibernate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
+@Table(name="student_table")
 public class Student {
 	
 	@Id
 	private int id;
 	private String name;
+	
+	@Column(name="studentEmail")
 	private String email;
+	
+	@Transient
 	private int age;
 	
 	public int getId() {

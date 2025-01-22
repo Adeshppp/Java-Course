@@ -8,15 +8,13 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
-/**
- * Hello world!
- */
+
 public class App {
     public static void main(String[] args) {
         Student student = new Student(); 
-        student.setId(2);
-        student.setName("Vedika");
-        student.setEmail("vedika@gmail.com");
+        student.setId(1);
+        student.setName("adesh");
+        student.setEmail("adesh@gmail.com");
         student.setAge(25);
         
         
