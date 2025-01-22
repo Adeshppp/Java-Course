@@ -103,3 +103,8 @@ Operations
 @OneTeMany(mappedBy="student") : will not create a table and will depend on another table for mapping 
 
 
+## Fetch : Eager and Lazy
+
+Eager and lazy loading is a technique to load the dependent objects, by default it is lazy but we can declare it to use eager loading like below
+
+> 	@OneToMany(mappedBy="alien", fetch=FetchType.EAGER)
