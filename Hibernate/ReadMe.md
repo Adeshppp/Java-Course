@@ -89,6 +89,7 @@ Operations
 3. @Column(name="column_name) : Changes the name of a column/variable
 4. @Table(name="table_name)
 5. @Transient : if we declare any variable with @Transient then it won't take that variable as a column in DB.
+6. @Embeddable : When there are 2 POJO classes and one of them is entity and another one is used as a type to one of the columns in entity class then on that type class we can add @Embeddable annotation whcih merges that class into entity class table , basically it does not create another table.
 
 
 

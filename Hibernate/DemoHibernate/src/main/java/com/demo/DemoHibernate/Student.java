@@ -12,9 +12,9 @@ public class Student {
 	
 	@Id
 	private int id;
-	private String name;
+//	private String name;
+	private StudentName name;
 	
-	@Column(name="studentEmail")
 	private String email;
 	
 	@Transient
@@ -31,12 +31,15 @@ public class Student {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
+
+	public StudentName getName() {
 		return name;
 	}
-	public void setName(String name) {
+
+	public void setName(StudentName name) {
 		this.name = name;
 	}
+
 	public String getEmail() {
 		return email;
 	}
