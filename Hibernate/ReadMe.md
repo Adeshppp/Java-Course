@@ -126,9 +126,12 @@ There are level 2 cache, which can be used by 2 different sessions. and provided
 3. swarm
    
 to use ehcache:
-1. add maven dependancy : ehcache (provides caching feature)
-2. need to download jar file : hibernate-ehcache (provides integration between ehcache and hibernate)
-3. Add properties to hibernate.cfg.xml file
-4. change entity by adding few annotations:
+1. Add maven dependancy : ehcache (provides caching feature) 
+   1. hibernate-ehcache : 4.1.6.Final  (same as hibernate version we are working with) : provides integration between ehcache and hibernate
+   2. ehcache : 3.10.8
+2. Add properties to hibernate.cfg.xml file
+   1.     <property name="hibernate.cache.use_second_level_cache">true</property>
+   2.     <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+3. Change entity by adding few annotations:
    1. @Cachable
-   2. @Cache
+   2. @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)

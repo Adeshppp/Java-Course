@@ -62,20 +62,28 @@ public class App
     	Alien a = new Alien();
     	
         Configuration config = new Configuration().configure().addAnnotatedClass(Laptop.class).addAnnotatedClass(Alien.class);
-        SessionFactory sf = config.buildSessionFactory();
+        ServiceRegistry seg = new ServiceRegistryBuilder().applySettings(config.getProperties()).buildServiceRegistry();
+      SessionFactory sf = config.buildSessionFactory(seg);
         Session session1 = sf.openSession();
-       
-        a = (Alien) session1.get(Alien.class, 101);
-        System.out.println(a);
+        System.out.println("caching level 1");
+
+
         
         
-        a = (Alien) session1.get(Alien.class, 101);
-        System.out.println(a);
+
 
         session1.beginTransaction();
+        // Level 1 cache
+        a = (Alien) session1.get(Alien.class, 101);
+        System.out.println(a);
+      a = (Alien) session1.get(Alien.class, 101);
+      System.out.println(a);
         session1.getTransaction().commit();
         session1.close();
         
+        System.out.println("caching level 2");
+        
+        // making another call to database as session is newly created
         Session session2 = sf.openSession();
         a = (Alien) session2.get(Alien.class, 101);
         System.out.println(a);
