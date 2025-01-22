@@ -108,3 +108,27 @@ Operations
 Eager and lazy loading is a technique to load the dependent objects, by default it is lazy but we can declare it to use eager loading like below
 
 > 	@OneToMany(mappedBy="alien", fetch=FetchType.EAGER)
+
+
+## Hibernate Caching
+
+Hibernate provides a default caching mechanism which works at level 1 caching and it is limited to a single session, means 2 different sessions can not use that same cache.
+
+### Level 1 Cache:
+
+in same session if we make two requests to databse, what iot will do is that, query databse once and shows the result for both the queries without making another query to database.
+
+
+### Level 2 Cache
+There are level 2 cache, which can be used by 2 different sessions. and provided by third parties:
+1. ehcache
+2. os
+3. swarm
+   
+to use ehcache:
+1. add maven dependancy : ehcache (provides caching feature)
+2. need to download jar file : hibernate-ehcache (provides integration between ehcache and hibernate)
+3. Add properties to hibernate.cfg.xml file
+4. change entity by adding few annotations:
+   1. @Cachable
+   2. @Cache

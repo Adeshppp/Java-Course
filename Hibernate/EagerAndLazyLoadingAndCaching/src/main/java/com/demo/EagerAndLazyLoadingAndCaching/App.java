@@ -37,7 +37,7 @@ public class App
 //      alien.getLaptop().add(laptop);
 //      laptop.setAlien(alien);
 
-//        session.save(laptop);
+//        session.save(laptop); 
 //        session.save(alien);
 //
 //        tx.commit();
@@ -45,17 +45,43 @@ public class App
     	
     	
     	// fetch data from DB
+//        Configuration config = new Configuration().configure().addAnnotatedClass(Laptop.class).addAnnotatedClass(Alien.class);
+//        SessionFactory sf = config.buildSessionFactory();
+//        Session session = sf.openSession();
+//        
+//        Alien a1 = (Alien) session.get(Alien.class, 101);
+//        System.out.println(a1);
+//
+//        session.beginTransaction();
+//        session.getTransaction().commit();
+    	
+    	
+    	
+// Hibernate Caching Level 1
+    	
+    	Alien a = new Alien();
+    	
         Configuration config = new Configuration().configure().addAnnotatedClass(Laptop.class).addAnnotatedClass(Alien.class);
         SessionFactory sf = config.buildSessionFactory();
-        Session session = sf.openSession();
+        Session session1 = sf.openSession();
+       
+        a = (Alien) session1.get(Alien.class, 101);
+        System.out.println(a);
         
-        Alien a1 = (Alien) session.get(Alien.class, 101);
-        System.out.println(a1);
-
-        Transaction tx = session.beginTransaction();
-
-        tx.commit();
         
+        a = (Alien) session1.get(Alien.class, 101);
+        System.out.println(a);
+
+        session1.beginTransaction();
+        session1.getTransaction().commit();
+        session1.close();
+        
+        Session session2 = sf.openSession();
+        a = (Alien) session2.get(Alien.class, 101);
+        System.out.println(a);
+        session2.beginTransaction();
+        session2.getTransaction().commit();
+        session2.close();
                
 
     }
