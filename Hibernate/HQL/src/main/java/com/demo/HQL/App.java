@@ -33,6 +33,7 @@ public class App
       session.beginTransaction();
       Random r = new Random();
       
+//   HQL QUery
       
 //      insert data into postgreSQL DB.
       

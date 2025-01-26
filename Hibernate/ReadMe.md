@@ -183,3 +183,36 @@ and can use uniqueResult() while fetching single record.
       q.setParameter("rollNo ", rollNo);
       Long s = (Long) q.uniqueResult();
       System.out.println(s);
+
+
+## SQL in Hibernate (Native Query)
+
+in order to use SQL in hibernate we have to use below method:
+
+      SQLQuery query = session.createSQLQuery("select * from student where rollNo>40");
+      query.addEntity(Student.class);
+      List<Student> students = query.list();
+
+      for(Student student: students) {
+    	  System.out.println(student);
+      }
+
+to use HQL, we use createQuery()\
+to use SQL, we use createSQLQuery()
+
+and If we are fetching multiple records then returned result will be a list of Objects, and we need to map it to a particular class Student in above example by using
+> query.addEntity(Student.class);
+
+otherwise it will show hex representation of each record.
+
+
+### Fetching Specific Records
+      SQLQuery query = session.createSQLQuery("select name, marks from student where rollNo>40");
+      query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP); // TRANSFORM RESULT IN MAP FORMAT
+      List students = query.list();
+
+      for(Object student: students) {
+    	  Map map =(Map)student;
+    	  System.out.println(map.get("name")+" : "+map.get("marks"));
+      }
+
