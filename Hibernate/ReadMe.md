@@ -157,10 +157,10 @@ We can also simply use SQL in hibernate by using native query.
 
 in Hibernate in order to create a query and execute it we can use below code:
 
-### to save data
+### To save data
       session.save(student);
 
-### fetching data from DB
+### Fetching data from DB
       Query q = session.createQuery("from Student");
       List<Student> students = q.list();
       for(Student s : students) System.out.println(s);
@@ -169,7 +169,7 @@ we can simply import Query as below
 > import org.hibernate.Query;
 
  and can use list() method to receive all records.
-### fetching specific record
+### Fetching specific record
 
       Query q = session.createQuery("from Student where rollNo = 40");
       Student s = (Student) q.uniqueResult();
@@ -177,3 +177,9 @@ we can simply import Query as below
 
 and can use uniqueResult() while fetching single record.
 
+### Positional Parameter
+      int rollNo = 40;
+      Query q = session.createQuery("select sum(marks) from Student where rollNo > :rollNo");
+      q.setParameter("rollNo ", rollNo);
+      Long s = (Long) q.uniqueResult();
+      System.out.println(s);

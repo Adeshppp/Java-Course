@@ -56,10 +56,26 @@ public class App
       
       //fetching specific record
 
-      Query q = session.createQuery("from Student where rollNo = 40");
-      Student s = (Student) q.uniqueResult();
+//      Query q = session.createQuery("from Student where rollNo = 40");
+//      Student s = (Student) q.uniqueResult();
+//      System.out.println(s);
+//      
+//      q = session.createQuery("select rollNo,name,marks from Student where rollNo = 40");
+//      Object[] student =  (Object[]) q.uniqueResult();
+//      for(Object o: student) {
+//    	  System.out.println(o);   
+//      }
+//      System.out.println(student[0]+" : "+student[1]+" : "+student[2]);
+      
+      
+      // positional parameter
+      int rollNo = 40;
+      Query q = session.createQuery("select sum(marks) from Student where rollNo > :rollNo");
+      q.setParameter("rollNo ", rollNo);
+      Long s = (Long) q.uniqueResult();
       System.out.println(s);
       
+     
       session.getTransaction().commit();
       session.close();
         
