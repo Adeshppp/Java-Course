@@ -63,8 +63,8 @@ LIFO (Last In First Out)
 
 Features --> Provided Functions
 
-add --> push(data)
-delete --> pop()
+add --> push(data)\
+delete --> pop()\
 find --> peak()
 
 example: book stack
@@ -74,7 +74,7 @@ example: book stack
 
 FIFO (FIrst In First Out)
 
-insert --> enqueue(data)
+insert --> enqueue(data)\
 remove --> dequeue()
 
 

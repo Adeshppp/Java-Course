@@ -44,7 +44,7 @@ Provide configuration to hibernate.cfg.xml file
     </hibernate-configuration>
 
 
-adding hbm2ddl.auto propery as 'create', creates a table each time by dropping previously created table with same name if exist and insert a query.
+adding hbm2ddl.auto propery as 'create', creates a table each time by dropping previously created table with same name if exist and insert a query.\
 adding hbm2ddl.auto propery as 'update', updates a table and if not exist creates a table and insert a query.
 
 
@@ -135,3 +135,23 @@ to use ehcache:
 3. Change entity by adding few annotations:
    1. @Cachable
    2. @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
+
+
+## Hibernate Query Language (HQL)
+
+As we know in hibernate we have methods like session.get(Student.class, 15); and session.save(obj) to perform operations.\
+but as we can see in get operation we provide class name and primary key as argument. in this it returns a record.\
+but what if we want to fetch particular record and particular field from that record, there HQL comes in picture.\
+HQL is similar to SQL.\
+
+in SQL
+> select * from student
+
+in HQL
+> from Student
+
+
+in JDBC, when we do get operation at that we have to store that result in resultSet unlike in HQL it returns a List.\
+
+We can also simply use SQL in hibernate by using native query.
+

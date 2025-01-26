@@ -19,7 +19,7 @@ jshell does not need to have all supporting functionality to run particular line
  
 ## Stack and Heap:
 
-* Stack is a memory area where local variables are stored. It is a LIFO (Last In First Out)\
+* Stack is a memory area where local variables are stored. It is a LIFO (Last In First Out)
 * Heap is a memory area where objects are stored.
 
 ## String: 
