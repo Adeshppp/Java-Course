@@ -216,3 +216,54 @@ otherwise it will show hex representation of each record.
     	  System.out.println(map.get("name")+" : "+map.get("marks"));
       }
 
+
+## Hibernate Object States / Persistence Life Cycle
+
+In java, when we create a object by using 'new' keyword it makes a space in heap memory and when we done using it or when we assign 'null' to it, it is available for garbage collector to clear that space. \
+Hibernate works exactly at middle.
+it provides 4 states:
+1. Transient : when we create an object and assign a value to it, at that time it is in Transient state.
+2. Persistent : when we perform save() or persist() operation on that object it gets saved to DB and later if you make any changes to that object, then same changes will get reflected in to database.
+3. Detached : if we use detach() method on that object, then it stops to reflect changes to database records.
+4. Removed : from persistance stage, if we do remove() operation, then it will remove that record/object from DB but at your application means in java that object remains as it is.
+
+Objects can enter in garbage collection stage from Transient, Removed and Detached stage, not from Persistent stage.
+
+
+      public class App{
+         public static void main( String[] args ){    	
+            Configuration config = new Configuration().configure().addAnnotatedClass(Laptop.class);
+            ServiceRegistry seg = new ServiceRegistryBuilder().applySettings(config.getProperties()).buildServiceRegistry();
+            SessionFactory sf = config.buildSessionFactory(seg);
+            Session session = sf.openSession();
+            session.beginTransaction();
+            Laptop laptop = new Laptop();
+
+            // Entering transient state
+            laptop.setLid(50);
+            laptop.setBrand("Apple");
+            laptop.setPrice(1500);
+
+            session.save(laptop); // Entering Persistence state
+
+            laptop.setPrice(1550); // updating value in DB also
+
+            session.delete(laptop); // Entering removed state
+
+            session.getTransaction().commit();
+
+            session.evict(laptop); // entering in Detached state
+
+            laptop.setPrice(1400); // this value won't get updated in DB
+
+            session.close();
+	        
+         }
+      }
+
+>Hibernate: insert into Laptop (brand, price, lid) values (?, ?, ?)\
+> Hibernate: update Laptop set brand=?, price=? where lid=?
+
+
+as you can see in console statement, it shoots 2 queries first to post the data to DB and another one to update it without we doing any additional operation except updating it.
+because it is in persistence state.
