@@ -267,3 +267,102 @@ Objects can enter in garbage collection stage from Transient, Removed and Detach
 
 as you can see in console statement, it shoots 2 queries first to post the data to DB and another one to update it without we doing any additional operation except updating it.
 because it is in persistence state.
+
+
+### Hibernate get vs load method
+
+	      Laptop lap1 = (Laptop) session.load(Laptop.class, 50);
+	      System.out.println(lap1);
+
+	      Laptop lap = (Laptop) session.get(Laptop.class, 50);
+	      System.out.println(lap);
+
+session.get() method will return a object if exist and session.load() method returns empty object and only loads the content when we use it.
+in general, we use get() method.
+when we want va proxy/empty object, then we use load() method.
+
+
+## JPA : Java Persistence API
+
+#### Pre-requisites
+1. Java
+2. RDBMS
+3. JDBC
+4. Hibernate (Optional)
+
+In corporate world, data is everything and in case of failure of system we need to persist that data somewhere in Database.
+So we can do that by using JDBC, but there are multiple issues with JDBC. 
+as we know in java, everything is Object then how to save that object in database in row-column format?
+here ORM(Object Relational Mapping) comes into picture. ORM helps us to save java object directly to database.
+we can use ORM by using following tools:
+1. Hibernate
+2. iBatis
+3. TopLink
+
+JPA is specification and hibernate, iBatis and TopLink are its implementation.
+
+#### Need of JPA?
+If we use just hibernate or any other implementation tool, it is difficult to switch from one tool to another one.
+but when we use Hibernate with JPA and later if we think to jump on using another tool then it is possible dn easy.
+
+#### Hibernate by using JPA
+
+Added below dependancies to pom.xml file:
+1. hibernate-core : 6.6.5.Final
+2. mysql-connector-j : 8.3.0
+
+
+      package com.demo.JpaDemo;
+      
+      import jakarta.persistence.EntityManager;
+      import jakarta.persistence.EntityManagerFactory;
+      import jakarta.persistence.Persistence;
+
+
+      public class App{
+         public static void main( String[] args ){  	
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+            EntityManager em = emf.createEntityManager();
+            
+            // Fetching info from MYSQL DB
+            Alien a = em.find(Alien.class,102);
+            System.out.println(a);
+            
+            // Inserting records
+            Alien alien =new Alien();
+            alien.setAid(105);
+            alien.setAname("John");
+            em.getTransaction().begin();
+            em.persist(alien);
+            em.getTransaction().commit();
+         
+         }
+      }
+
+How above code will know which database to use?  
+for that we need to give it configuration in persistence.xml file.\
+persistence.xml file should be there in src/main/resources/META-INF folder to work properly.
+
+persistence.xml :
+
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+      version="2.1">
+         <persistence-unit name="pu">
+              <description>
+                  Persistence unit for the JPA tutorial of the Hibernate Getting Started Guide
+              </description>
+              <properties>
+                  <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+                  <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Java_course" />
+                  <property name="javax.persistence.jdbc.user" value="root" />
+                  <property name="javax.persistence.jdbc.password" value="password" />
+                  <property name="hibernate.show_sql" value="true" />
+                  <property name="hibernate.hbm2ddl.auto" value="create" />
+              </properties>
+         </persistence-unit>
+      </persistence>
+
+

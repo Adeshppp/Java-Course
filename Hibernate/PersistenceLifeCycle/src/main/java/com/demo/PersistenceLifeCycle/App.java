@@ -32,16 +32,26 @@ public class App
 	      
 	      Laptop laptop = new Laptop();
 	      // Entering transient state
-	      laptop.setLid(50);
-	      laptop.setBrand("Apple");
-	      laptop.setPrice(1500);
-	      session.save(laptop); // Entering Persistence state
-	      laptop.setPrice(1550); // updating value in DB also
-	      session.delete(laptop); // Entering removed state
-	      session.getTransaction().commit();
+//	      laptop.setLid(51);
+//	      laptop.setBrand("Apple mac pro");
+//	      laptop.setPrice(1800);
+//	      session.save(laptop); // Entering Persistence state
+//	      laptop.setPrice(1550); // updating value in DB also
+//	      session.delete(laptop); // Entering removed state
+//	      session.getTransaction().commit();
+//	      
+//	      session.evict(laptop); // entering in Detached state
+//	      laptop.setPrice(1400); // this value won't get updated in DB
 	      
-	      session.evict(laptop); // entering in Detached state
-	      laptop.setPrice(1400); // this value won't get updated in DB
+	      
+	      
+
+	      Laptop lap1 = (Laptop) session.load(Laptop.class, 50);
+	      System.out.println(lap1);
+	      System.out.println("calling get");
+	      Laptop lap = (Laptop) session.get(Laptop.class, 50);
+	      System.out.println(lap);
+	      
 	      session.close();
 	        
     }
