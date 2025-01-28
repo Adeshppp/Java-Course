@@ -49,6 +49,22 @@
 		    <version>5.0.0</version> <!-- Match Tomcat's supported version -->
 		    <scope>provided</scope>
 		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.media</groupId>
+		    <artifactId>jersey-media-jaxb</artifactId>
+		    <version>${jersey.version}</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>jakarta.xml.bind</groupId>
+		    <artifactId>jakarta.xml.bind-api</artifactId>
+		    <version>3.0.1</version> <!-- Match your Jakarta EE version -->
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jaxb</groupId>
+		    <artifactId>jaxb-runtime</artifactId>
+		    <version>3.0.2</version>
+		</dependency>
 
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
