@@ -38,7 +38,9 @@ How to implement REST?
 #### Method Level Annotations:
 1. @GET : method level annotation used to handle get requests
 2. @Produces(MediaType.APPLICATION_XML) : to declare a return type
-
+3. @Consumes(MediaType.APPLICATION_XML) : to declare a incoming type
+4. @POST
+5. @Path("alien/{id}") : to delcare a path with dynamic path parameter
 
 #### Dependancies
 1. jakarta.servlet-api : 5.0.0
@@ -99,3 +101,39 @@ AlienResource.java:
 
 ### Mock Repository
 
+We are implementing repository layer which mocks database.
+
+
+    package com.demo.demorest;
+    
+    import java.util.ArrayList;
+    import java.util.List;
+    
+    public class AlienRepository {
+        List<Alien> aliens;
+        public AlienRepository() {
+            aliens = new ArrayList<>();
+            Alien a1 = new Alien();
+            a1.setId(1);
+            a1.setName("Adesh");
+            a1.setPoints(900);
+            aliens.add(a1);
+        }
+    
+        public List<Alien> getAliens() {
+            System.out.println(aliens);
+            return aliens;
+        }
+        
+        public Alien getAlien(int id) {
+            for(Alien a : aliens) {
+                if(a.getId() == id) return a;
+            }
+            return null;
+        }
+    
+        public void createAlien(Alien alien) {
+            aliens.add(alien); 
+	    }
+
+    }

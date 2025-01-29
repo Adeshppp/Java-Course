@@ -24,6 +24,10 @@ public class Alien {
 	public int getPoints() {
 		return points;
 	}
+	@Override
+	public String toString() {
+		return "Alien [id=" + id + ", name=" + name + ", points=" + points + "]";
+	}
 	public void setPoints(int points) {
 		this.points = points;
 	}
