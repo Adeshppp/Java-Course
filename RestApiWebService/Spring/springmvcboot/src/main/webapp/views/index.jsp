@@ -11,11 +11,11 @@
 <br>
 <br>
 <br>
-	<form action="add">
-	    Enter 1st Number : <input type="text" name="num1"></input>
+	<form action="addStudent">
+	    Enter your ID : <input type="text" name="id"></input>
 	    <br>
 	    <br>
-	    Enter 2nd Number : <input type="text" name="num2"></input>
+	    Enter your Name : <input type="text" name="name"></input>
 	    <input type="submit">
 	</form>
 

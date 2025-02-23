@@ -1,7 +1,9 @@
 package com.example.springmvcboot;
 
 
+import com.example.springmvcboot.model.Student;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +22,14 @@ public class HomeController {
 
         int num3 = i+j;
         m.addAttribute("num3",num3);
+        return "result";
+    }
+    @RequestMapping("/addStudent")
+    public String addStudent(@RequestParam("id") int id, @RequestParam("name") String name, Model m){
+        Student student = new Student();
+        student.setId(id);
+        student.setName(name);
+        m.addAttribute("student", student);
         return "result";
     }
 }
