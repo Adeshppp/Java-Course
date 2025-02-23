@@ -4,9 +4,7 @@ package com.example.springmvcboot;
 import com.example.springmvcboot.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HomeController {
@@ -37,7 +35,8 @@ public class HomeController {
 //    }
 
 // by using ModelAttribute class
-    @RequestMapping("/addStudent")
+//    @RequestMapping(value="/addStudent", method = RequestMethod.POST)
+    @GetMapping(value="/addStudent")
     public String addStudent(@ModelAttribute Student student){
         return "result";
     }

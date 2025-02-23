@@ -11,7 +11,7 @@
 <br>
 <br>
 <br>
-	<form action="addStudent">
+	<form action="addStudent" method="post">
 	    Enter your ID : <input type="text" name="id"></input>
 	    <br>
 	    <br>
