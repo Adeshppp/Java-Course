@@ -3,6 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="student" class="org.example.Student" scope="prototype"></bean>
+<!--    <bean id="student" class="org.example.Student" scope="prototype"></bean>-->
+
+<!--    singletone default-->
+    <bean id="student" class="org.example.Student">
+        <property name="age" value="10"></property>
+    </bean>
 
 </beans>
