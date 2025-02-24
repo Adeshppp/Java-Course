@@ -2,12 +2,26 @@ package com.example.springmvcboot;
 
 
 import com.example.springmvcboot.model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+
+    @Autowired
+    StudentRepo studentRepo;
+
+    @ModelAttribute
+    public void modelData(Model m) {
+        m.addAttribute("name", "Students");
+    }
+
+
 
     @RequestMapping("/")
     public String home(){
@@ -15,29 +29,15 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/add")
-    public String add(@RequestParam("num1") int i, @RequestParam("num2") int j, ModelMap m){
-
-        int num3 = i+j;
-        m.addAttribute("num3",num3);
+    @PostMapping(value="/addStudent")
+    public String addStudent(@ModelAttribute Student student){
         return "result";
     }
 
+    @GetMapping(value="/getStudents")
+    public String getStudents(Model m){
 
-    // by using models directory
-//    @RequestMapping("/addStudent")
-//    public String addStudent(@RequestParam("id") int id, @RequestParam("name") String name, Model m){
-//        Student student = new Student();
-//        student.setId(id);
-//        student.setName(name);
-//        m.addAttribute("student", student);
-//        return "result";
-//    }
-
-// by using ModelAttribute class
-//    @RequestMapping(value="/addStudent", method = RequestMethod.POST)
-    @GetMapping(value="/addStudent")
-    public String addStudent(@ModelAttribute Student student){
-        return "result";
+        m.addAttribute("students",studentRepo);
+        return "showStudents";
     }
 }
