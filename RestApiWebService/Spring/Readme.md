@@ -24,6 +24,7 @@ Path variable is used to pass data from url to controller method. and usually us
 2. @ResponseBody : to delcare that particular controller method should respond in JSON format
     ![Image](https://github.com/user-attachments/assets/72aed19f-5407-4867-b6a7-56a4ac9b5ace)
 3. @RestController : to declare a class as a controller which contaions methods which returns JSON representation or other types but not views
+
     ![Image](https://github.com/user-attachments/assets/32d0fc5a-5134-4114-8617-08a4c2246f82)
 4. @PathVariable : to pass data from url to controller method
     ![Image](https://github.com/user-attachments/assets/156f71e0-4c35-401f-a7c8-3f4e9a80b846) 
