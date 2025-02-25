@@ -2,10 +2,7 @@ package com.example.SpringBootRest;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,11 +12,18 @@ public class StudentController {
     @Autowired
     StudentRepository studentRepository;
 
-    @GetMapping("/students")
+    @GetMapping(path="/students", produces={"application/xml"})
     public List<Student> getStudents(){
         List<Student> students = (List<Student>) studentRepository.findAll();
 
         return students;
+    }
+
+    //    @PostMapping(path="student", consumes = {MediaType.APPLICATION_JSON_VALUE})
+    @PostMapping(path="student", consumes = {"application/xml"})
+    public Student addStudent(@RequestBody Student student){
+        studentRepository.save(student);
+        return student;
     }
 
 
@@ -29,11 +33,7 @@ public class StudentController {
         return student;
     }
 
-    @PostMapping("student")
-    public Student addStudent(Student student){
-        studentRepository.save(student);
-        return student;
-    }
+
 
 
 
