@@ -11,5 +11,4 @@ public class Student {
     @Id
     private int id;
     private String name;
-    private int points;
 }
